@@ -5,6 +5,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+//IMPORTAR COMPONENTES MATERIAL-UI MANUALMENTE
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 class Hello extends React.Component {
   constructor(props) {
