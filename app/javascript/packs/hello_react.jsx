@@ -9,10 +9,41 @@ import PropTypes from 'prop-types'
 class Hello extends React.Component {
   constructor(props) {
     super(props);
+    
+  // ESTADOS DEL COMPONENTE
+  this.state = {
+    numero: 0
+  };
+  this.aumentar = this.aumentar.bind(this);
+  this.disminuir = this.disminuir.bind(this);
   }
+  
+  
+  //FUNCIONES Y CICLO DE VIDA DEL COMPONENTE
+  componentWillMount(){
+    console.log("Antes de montar");
+  }
+  
+  aumentar = () => {
+    this.setState({
+      numero: this.state.numero + 1
+    })
+  }
+  disminuir = () => {
+    this.setState({
+      numero: this.state.numero - 1
+    })
+  } 
+  
+  // RENDERIZADO
   render() {
+    const numero = this.state.numero == 0 ? <p>Vacio</p> : <p>{this.state.numero}</p>;      
     return (
-      <h1>Hello React</h1>
+      <div>
+        <h1>{numero}</h1>
+        <button onClick={this.aumentar}>Aumentar</button>
+        <button onClick={this.disminuir}>Disminuir</button>
+      </div>
     )
   }
 }
